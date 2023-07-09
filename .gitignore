@@ -1,0 +1,9 @@
+/.idea/
+/vendor/
+/coverage_html/
+/var/
+/no_coverage_html/
+/unmocked_no_coverage_html/
+/docker/certbot/etc/
+/docker/certbot/var/
+/docker/certbot/conf/live/

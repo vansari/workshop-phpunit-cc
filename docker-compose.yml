@@ -1,0 +1,75 @@
+version: "3.8"
+
+volumes:
+  warenkorb_mysql:
+
+networks:
+  database:
+      internal: true
+  backend:
+  frontend:
+
+services:
+  php:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: cli
+      args:
+        PHP_VERSION: '8.2'
+    volumes:
+      - './:/code'
+      - './docker/php/:/usr/local/etc/php/conf.d/'
+    networks:
+      - backend
+      - database
+    profiles:
+      - tools
+
+  fpm:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: fpm
+      args:
+        PHP_VERSION: '8.2'
+    volumes:
+      - './:/code'
+      - './docker/php/:/usr/local/etc/php/conf.d/'
+    networks:
+      - backend
+      - database
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./public:/var/www
+      - ./docker/nginx/conf:/etc/nginx/conf.d
+      - ./docker/nginx/etc/certs:/etc/nginx/ssl
+    networks:
+      - backend
+      - frontend
+
+  database:
+    image: mariadb:10
+    environment:
+      MARIADB_DATABASE: ${DATABASE_DBNAME}
+      MARIADB_USER: ${DATABASE_USER}
+      MARIADB_PASSWORD: ${DATABASE_PASS}
+      MARIADB_ROOT_PASSWORD: ${DATABASE_ROOT_PASS}
+    volumes:
+      - warenkorb_mysql:/var/lib/mysql
+    networks:
+      - database
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+        - "/var/www/certbot"
+        - "./docker/certbot/etc/letsencrypt:/etc/letsencrypt"
+        - "./docker/certbot/var/lib/letsencrypt:/var/lib/letsencrypt"
+    networks:
+        - backend

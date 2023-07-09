@@ -1,0 +1,28 @@
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.6/phpunit.xsd"
+        backupGlobals="true"
+        bootstrap="tests/bootstrap.php"
+>
+    <coverage
+        includeUncoveredFiles="true"
+        processUncoveredFiles="true"
+        pathCoverage="false"
+        ignoreDeprecatedCodeUnits="true"
+    >
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </coverage>
+    <testsuites>
+        <testsuite name="cov">
+            <directory suffix="Test.php">tests/unit/cov</directory>
+        </testsuite>
+        <testsuite name="no_cov">
+            <directory suffix="Test.php">tests/unit/no_cov</directory>
+        </testsuite>
+        <testsuite name="unmocked_no_cov">
+            <directory suffix="Test.php">tests/unit/unmocked_no_cov</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
