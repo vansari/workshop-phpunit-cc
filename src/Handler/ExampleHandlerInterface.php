@@ -6,4 +6,5 @@ namespace vansari\workshop\phpunit\Handler;
 interface ExampleHandlerInterface
 {
     public function handle(): void;
+    public function getAmount(): ?float;
 }

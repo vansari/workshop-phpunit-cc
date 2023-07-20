@@ -5,9 +5,7 @@
         bootstrap="tests/bootstrap.php"
 >
     <coverage
-        includeUncoveredFiles="true"
         processUncoveredFiles="true"
-        pathCoverage="false"
         ignoreDeprecatedCodeUnits="true"
     >
         <include>
@@ -23,6 +21,12 @@
         </testsuite>
         <testsuite name="unmocked_no_cov">
             <directory suffix="Test.php">tests/unit/unmocked_no_cov</directory>
+        </testsuite>
+        <testsuite name="mocked_phpunit">
+            <directory suffix="Test.php">tests/unit/mocked_phpunit</directory>
+        </testsuite>
+        <testsuite name="mocked_phpunit_no_asserts">
+            <directory suffix="Test.php">tests/unit/mocked_phpunit_no_asserts</directory>
         </testsuite>
     </testsuites>
 </phpunit>

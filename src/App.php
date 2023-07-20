@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace vansari\workshop\phpunit;
 
 use Psr\Log\LoggerInterface;
-use vansari\workshop\phpunit\Handler\ExampleHandler;
 use vansari\workshop\phpunit\Handler\ExampleHandlerInterface;
 
 class App

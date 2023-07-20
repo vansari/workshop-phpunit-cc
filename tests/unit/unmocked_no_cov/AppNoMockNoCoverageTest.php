@@ -14,7 +14,7 @@ use vansari\workshop\phpunit\Handler\ExampleHandlerInterface;
 class AppNoMockNoCoverageTest extends TestCase
 {
     /*
-     * This example shows you that the coverage report reports as covered all lines of code that are executed.
+     * This example shows you that the coverage report reports all lines of code as covered which are executed.
      */
     public function testRun(): void
     {

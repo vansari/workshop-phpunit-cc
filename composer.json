@@ -34,6 +34,8 @@
         "coverage": "vendor/bin/phpunit --testsuite=cov --coverage-html=coverage_html",
         "mock-no-coverage": "vendor/bin/phpunit --testsuite=no_cov --coverage-html=mock_no_coverage_html",
         "unmocked-no-coverage": "vendor/bin/phpunit --testsuite=unmocked_no_cov --coverage-html=unmocked_no_coverage_html",
+        "mocked-phpunit": "vendor/bin/phpunit --testsuite=mocked_phpunit --coverage-html=mocked_phpunit_html",
+        "mocked-phpunit-no-asserts": "vendor/bin/phpunit --testsuite=mocked_phpunit_no_asserts --coverage-html=mocked_phpunit_no_asserts_html",
         "test": [
             "@lint",
             "@cs",
