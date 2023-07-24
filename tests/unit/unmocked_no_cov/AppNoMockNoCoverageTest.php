@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace vansari\workshop\phpunit\Tests\unit\unmocked_no_cov;
@@ -6,10 +7,8 @@ namespace vansari\workshop\phpunit\Tests\unit\unmocked_no_cov;
 use Mockery;
 use Monolog\Logger;
 use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use vansari\workshop\phpunit\App;
 use vansari\workshop\phpunit\Handler\ExampleHandler;
-use vansari\workshop\phpunit\Handler\ExampleHandlerInterface;
 
 class AppNoMockNoCoverageTest extends TestCase
 {

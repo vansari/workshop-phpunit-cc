@@ -9,3 +9,5 @@
 /docker/certbot/conf/live/
 /mock_no_coverage_html/
 /mocked_phpunit_html/
+/.phpunit.result.cache
+/.env.local

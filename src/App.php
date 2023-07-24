@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace vansari\workshop\phpunit;
@@ -19,7 +20,7 @@ class App
         $this->handler->handle();
         $this->logger->info('App Log');
         $result = $this->calculate();
-        $this->logger->info('We have calculated: { result }', ['result' => $result]);
+        $this->logger->info('We have calculated: {result}', ['result' => $result]);
 
         return $result;
     }
