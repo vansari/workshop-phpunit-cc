@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace vansari\workshop\phpunit\Tests\unit\unmocked_no_cov;
 
-use Mockery;
 use Monolog\Logger;
 use PHPUnit\Framework\TestCase;
 use vansari\workshop\phpunit\App;

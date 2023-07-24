@@ -11,3 +11,8 @@
 /mocked_phpunit_html/
 /.phpunit.result.cache
 /.env.local
+/c_coverage_html/
+/c_mock_no_coverage_html/
+/c_mocked_phpunit_html/
+/c_mocked_phpunit_no_asserts_html/
+/c_unmocked_no_coverage_html/
